@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إسراء محمد | محللة بيانات</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f8f9fa; color: #2c2c2a; line-height: 1.7; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #0f6e56 0%, #1d9e75 100%); color: white; padding: 80px 20px; text-align: center; }
+  .hero-avatar { width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 48px; font-weight: 700; color: white; margin: 0 auto 20px; border: 3px solid rgba(255,255,255,0.4); }
+  .hero h1 { font-size: 36px; font-weight: 700; margin-bottom: 8px; }
+  .hero .title { font-size: 18px; opacity: 0.9; margin-bottom: 16px; }
+  .hero .badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; padding: 6px 16px; font-size: 13px; margin: 4px; }
+  .hero .links { margin-top: 24px; }
+  .hero .links a { display: inline-block; background: white; color: #0f6e56; border-radius: 8px; padding: 10px 24px; font-weight: 600; font-size: 14px; text-decoration: none; margin: 6px; transition: opacity 0.2s; }
+  .hero .links a:hover { opacity: 0.85; }
+  .hero .links a.outline { background: transparent; color: white; border: 2px solid white; }
+
+  /* SECTIONS */
+  section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
+  h2 { font-size: 26px; font-weight: 700; color: #0f6e56; margin-bottom: 8px; padding-bottom: 10px; border-bottom: 2px solid #e1f5ee; }
+  .section-sub { color: #5f5e5a; font-size: 15px; margin-bottom: 32px; }
+
+  /* ABOUT */
+  .about-text { font-size: 16px; color: #444; line-height: 1.9; background: white; border-radius: 12px; padding: 28px; border: 1px solid #e1f5ee; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
+  .skill-card { background: white; border: 1px solid #e1f5ee; border-radius: 12px; padding: 20px 16px; text-align: center; }
+  .skill-icon { font-size: 32px; margin-bottom: 10px; }
+  .skill-name { font-weight: 600; font-size: 15px; color: #2c2c2a; margin-bottom: 4px; }
+  .skill-level { font-size: 12px; color: #0f6e56; background: #e1f5ee; border-radius: 20px; padding: 3px 10px; display: inline-block; }
+
+  /* PROJECTS */
+  .project-card { background: white; border: 1px solid #e1f5ee; border-radius: 12px; padding: 24px; margin-bottom: 20px; display: flex; gap: 20px; align-items: flex-start; }
+  .project-icon { width: 56px; height: 56px; border-radius: 12px; background: #e1f5ee; display: flex; align-items: center; justify-content: center; font-size: 28px; flex-shrink: 0; }
+  .project-info h3 { font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+  .project-info p { font-size: 14px; color: #5f5e5a; line-height: 1.7; margin-bottom: 10px; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { background: #e1f5ee; color: #0f6e56; font-size: 12px; border-radius: 20px; padding: 3px 12px; font-weight: 500; }
+  .project-link { display: inline-block; margin-top: 12px; color: #0f6e56; font-size: 13px; font-weight: 600; text-decoration: none; border: 1px solid #0f6e56; border-radius: 6px; padding: 5px 14px; }
+  .project-link:hover { background: #e1f5ee; }
+
+  /* STATS */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
+  .stat-card { background: white; border: 1px solid #e1f5ee; border-radius: 12px; padding: 24px 16px; text-align: center; }
+  .stat-num { font-size: 36px; font-weight: 700; color: #0f6e56; }
+  .stat-label { font-size: 13px; color: #5f5e5a; margin-top: 4px; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .contact-card { background: white; border: 1px solid #e1f5ee; border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 14px; text-decoration: none; color: #2c2c2a; transition: border-color 0.2s; }
+  .contact-card:hover { border-color: #0f6e56; }
+  .contact-icon { width: 44px; height: 44px; border-radius: 10px; background: #e1f5ee; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+  .contact-info .label { font-size: 12px; color: #5f5e5a; }
+  .contact-info .value { font-size: 14px; font-weight: 600; color: #0f6e56; }
+
+  /* FOOTER */
+  footer { background: #085041; color: rgba(255,255,255,0.8); text-align: center; padding: 24px; font-size: 13px; }
+  footer strong { color: white; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 26px; }
+    .project-card { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-avatar">ا</div>
+  <h1>إسراء محمد متولي</h1>
+  <div class="title">محللة بيانات معتمدة | Certified Data Analyst</div>
+  <div>
+    <span class="badge">⭐ تقييم 5/5</span>
+    <span class="badge">📜 معتمدة من وزارة الاتصالات</span>
+    <span class="badge">🎓 بكالوريوس تجارة - محاسبة</span>
+  </div>
+  <div class="links">
+    <a href="https://github.com/israaa-abdelaal" target="_blank">GitHub</a>
+    <a href="https://nafezly.com" target="_blank" class="outline">نفذلي</a>
+    <a href="#contact" class="outline">تواصل معي</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <h2>من أنا</h2>
+  <p class="section-sub">نبذة مختصرة عني</p>
+  <div class="about-text">
+    أنا إسراء محمد متولي، محللة بيانات معتمدة من وزارة الاتصالات وتكنولوجيا المعلومات، أحمل بكالوريوس تجارة تخصص محاسبة بتقدير جيد جداً — وهو ما منحني نظرة مالية وتحليلية متكاملة تميّزني في هذا المجال.
+    <br><br>
+    أتخصص في تحليل البيانات وتحويلها من أرقام مجردة إلى رؤى واضحة تدعم اتخاذ القرار. عملت على مشاريع متعددة عبر منصات خمسات وفريلانسر يارد، وحافظت على تقييم 5 نجوم كامل — وهو ما يعكس التزامي بالجودة والدقة في كل مشروع.
+  </div>
+</section>
+
+<!-- STATS -->
+<section style="padding-top: 0;">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-num">5⭐</div><div class="stat-label">تقييم العملاء</div></div>
+    <div class="stat-card"><div class="stat-num">+10</div><div class="stat-label">مشروع منجز</div></div>
+    <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">منصات فريلانس</div></div>
+    <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">رضا العملاء</div></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2>المهارات التقنية</h2>
+  <p class="section-sub">الأدوات والتقنيات التي أتقنها</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Power BI</div>
+      <div class="skill-level">متقدم</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📗</div>
+      <div class="skill-name">Excel</div>
+      <div class="skill-level">متقدم</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-name">Python</div>
+      <div class="skill-level">متوسط</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-name">SQL</div>
+      <div class="skill-level">متوسط</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🔄</div>
+      <div class="skill-name">Power Query</div>
+      <div class="skill-level">متقدم</div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📐</div>
+      <div class="skill-name">DAX</div>
+      <div class="skill-level">متقدم</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <h2>معرض الأعمال</h2>
+  <p class="section-sub">أبرز المشاريع التي نفذتها</p>
+
+  <div class="project-card">
+    <div class="project-icon">☕</div>
+    <div class="project-info">
+      <h3>داشبورد مبيعات كافيه Amara</h3>
+      <p>لوحة تحكم تفاعلية شاملة لتحليل أداء مبيعات كافيه Amara عبر عدة فروع، تتضمن تحليل المبيعات الشهرية، طرق الدفع، أفضل المنتجات، والمقارنة بين الفروع.</p>
+      <div class="project-tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">تحليل مبيعات</span>
+      </div>
+      <a class="project-link" href="https://github.com/israaa-abdelaal/Amara-cafe-sales-dashboard" target="_blank">عرض المشروع على GitHub ↗</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>تواصل معي</h2>
+  <p class="section-sub">يسعدني العمل معك على مشروعك القادم</p>
+  <div class="contact-grid">
+    <a class="contact-card" href="tel:+201063235048">
+      <div class="contact-icon">📱</div>
+      <div class="contact-info">
+        <div class="label">واتساب / هاتف</div>
+        <div class="value">+201063235048</div>
+      </div>
+    </a>
+    <a class="contact-card" href="mailto:israamohamed373@gmail.com">
+      <div class="contact-icon">📧</div>
+      <div class="contact-info">
+        <div class="label">البريد الإلكتروني</div>
+        <div class="value">israamohamed373@gmail.com</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/israa-mohamed" target="_blank">
+      <div class="contact-icon">💼</div>
+      <div class="contact-info">
+        <div class="label">ملفي المهني</div>
+        <div class="value">Israa Mohamed | LinkedIn</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://khamsat.com/user/israa-a" target="_blank">
+      <div class="contact-icon">⭐</div>
+      <div class="contact-info">
+        <div class="label">خمسات</div>
+        <div class="value">Israa A</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://github.com/israaa-abdelaal" target="_blank">
+      <div class="contact-icon">💻</div>
+      <div class="contact-info">
+        <div class="label">مشاريعي</div>
+        <div class="value">GitHub</div>
+      </div>
+    </a>
+    <a class="contact-card" href="https://nafezly.com" target="_blank">
+      <div class="contact-icon">🛒</div>
+      <div class="contact-info">
+        <div class="label">طلب خدمة</div>
+        <div class="value">نفذلي</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  صُمّم بـ ❤️ | <strong>إسراء محمد متولي</strong> — محللة بيانات معتمدة
+</footer>
+
+</body>
+</html>
