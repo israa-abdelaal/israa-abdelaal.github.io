@@ -51,12 +51,14 @@
   .stat-label { font-size: 13px; color: #5f5e5a; margin-top: 4px; }
 
   /* CONTACT */
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-  .contact-card { background: white; border: 1px solid #e1f5ee; border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 14px; text-decoration: none; color: #2c2c2a; transition: border-color 0.2s; }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .contact-card { background: white; border: 1px solid #e1f5ee; border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 12px; text-decoration: none; color: #2c2c2a; transition: border-color 0.2s; min-width: 0; }
   .contact-card:hover { border-color: #0f6e56; }
-  .contact-icon { width: 44px; height: 44px; border-radius: 10px; background: #e1f5ee; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
-  .contact-info .label { font-size: 12px; color: #5f5e5a; }
-  .contact-info .value { font-size: 14px; font-weight: 600; color: #0f6e56; }
+  .contact-icon { width: 44px; height: 44px; border-radius: 10px; background: #e1f5ee; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .contact-info { min-width: 0; overflow: hidden; }
+  .contact-info .label { font-size: 11px; color: #5f5e5a; }
+  .contact-info .value { font-size: 13px; font-weight: 600; color: #0f6e56; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media (max-width: 700px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
 
   /* FOOTER */
   footer { background: #085041; color: rgba(255,255,255,0.8); text-align: center; padding: 24px; font-size: 13px; }
@@ -197,7 +199,7 @@
       <div class="contact-icon">💼</div>
       <div class="contact-info">
         <div class="label">ملفي المهني</div>
-        <div class="value">Israa Mohamed | LinkedIn</div>
+        <div class="value">LinkedIn</div>
       </div>
     </a>
     <a class="contact-card" href="https://khamsat.com/user/israa-a" target="_blank">
